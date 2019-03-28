@@ -9,12 +9,72 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    @IBOutlet weak var btnLoadFile: NSButton!
+    @IBOutlet weak var btnConvertFile: NSButton!
+    @IBOutlet weak var tblFiles: NSTableView!
+    @IBOutlet var txtFile: NSTextView!
+    
+    var arrFileList: [URL] = []
+    var myModel = rootViewModel()
+    var bIsSplit:Bool = false
+    var fileBottom:CGFloat = 0
+    
+    var selectedFolder:URL? {
+        
+        didSet {
+            if let selectedFolder = selectedFolder {
+                arrFileList = myModel.contentsOf(folder: selectedFolder)
+                
+                self.tblFiles.reloadData()
+                self.tblFiles.scrollRowToVisible(0)
+                
+            } else {
+                print("The folder is empty")
+            }
+        }
+    }
+    
+    var selectedItem: URL? {
+        didSet {
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tblFiles.delegate = self
+        tblFiles.dataSource = self
+        //fileBottom = lcFileBottom.constant
     }
+    
+    //MARK - File Selection
+    
+    @IBAction func selectFiles(_ sender: Any) {
+        
+        //if we're not in the window, bail.
+        guard let window = view.window else { return }
+        
+        //create NSOpenPanel instance and set properties
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.allowsMultipleSelection = false
+        
+        //
+        panel.beginSheetModal(for: window) { (result) in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                self.selectedFolder = panel.urls[0]
+            }
+        }
+    }
+    
+    @IBAction func convertFiles(_ sender: Any) {
+        
+    }
+    
+    
 
     override var representedObject: Any? {
         didSet {
@@ -24,4 +84,42 @@ class ViewController: NSViewController {
 
 
 }
+
+//MARK: - TableView Extensions
+
+extension ViewController: NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return arrFileList.count
+    }
+    
+}
+
+extension ViewController: NSTableViewDelegate {
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        let cell = tableView.makeView(withIdentifier: (tableColumn!.identifier), owner: self) as? NSTableCellView
+        
+        cell!.textField!.stringValue = arrFileList[row].lastPathComponent
+        return cell
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        myModel.getFileContents(arrFileList[tblFiles.selectedRow], completion: {bSuccess, dictFileData, strMsg in
+            
+            if (bSuccess) {
+                if let strFile = dictFileData["text"] as? String {
+                    txtFile.string = strFile
+                }
+                
+            } else {
+                print(strMsg)
+            }
+        })
+    }
+    
+    
+}
+
 

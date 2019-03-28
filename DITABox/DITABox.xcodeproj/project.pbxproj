@@ -13,6 +13,7 @@
 		F586F309224D090000337297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F586F307224D090000337297 /* Main.storyboard */; };
 		F586F315224D090000337297 /* DITABoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F314224D090000337297 /* DITABoxTests.swift */; };
 		F586F320224D090000337297 /* DITABoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F31F224D090000337297 /* DITABoxUITests.swift */; };
+		F586F32E224D17DF00337297 /* rootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F32D224D17DF00337297 /* rootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F586F31B224D090000337297 /* DITABoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DITABoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F586F31F224D090000337297 /* DITABoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DITABoxUITests.swift; sourceTree = "<group>"; };
 		F586F321224D090000337297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F586F32D224D17DF00337297 /* rootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		F586F300224D08FF00337297 /* DITABox */ = {
 			isa = PBXGroup;
 			children = (
+				F586F32D224D17DF00337297 /* rootViewModel.swift */,
 				F586F301224D08FF00337297 /* AppDelegate.swift */,
 				F586F303224D08FF00337297 /* ViewController.swift */,
 				F586F305224D090000337297 /* Assets.xcassets */,
@@ -256,6 +259,7 @@
 			files = (
 				F586F304224D08FF00337297 /* ViewController.swift in Sources */,
 				F586F302224D08FF00337297 /* AppDelegate.swift in Sources */,
+				F586F32E224D17DF00337297 /* rootViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

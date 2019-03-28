@@ -826,6 +826,21 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xpx-4P-Ixl">
+                                <rect key="frame" x="387" y="556" width="76" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8Ku-21-tET" id="yxo-FQ-ipo">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="YYW-pJ-uFz">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="8Ku-21-tET"/>
+                                            <menuItem title="Item 2" id="err-Px-Ijh"/>
+                                            <menuItem title="Item 3" id="jhd-Lt-WJp"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>

@@ -111,6 +111,7 @@ extension ViewController: NSTableViewDelegate {
             if (bSuccess) {
                 if let strFile = dictFileData["text"] as? String {
                     txtFile.string = strFile
+                    //test 
                 }
                 
             } else {

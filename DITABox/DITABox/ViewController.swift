@@ -7,12 +7,15 @@
 //
 
 import Cocoa
+import WebKit
 
 class ViewController: NSViewController {
     @IBOutlet weak var btnLoadFile: NSButton!
     @IBOutlet weak var btnConvertFile: NSButton!
     @IBOutlet weak var tblFiles: NSTableView!
     @IBOutlet var txtFile: NSTextView!
+    @IBOutlet weak var webkit: WKWebView!
+    @IBOutlet weak var lblWebView: NSTextField!
     
     var arrFileList: [URL] = []
     var myModel = rootViewModel()
@@ -111,7 +114,9 @@ extension ViewController: NSTableViewDelegate {
             if (bSuccess) {
                 if let strFile = dictFileData["text"] as? String {
                     txtFile.string = strFile
-                    //test 
+                    
+                    //convert markdown to html and display preview
+                    myModel.convertMDToHTML(arrFileList[tblFiles.selectedRow])
                 }
                 
             } else {

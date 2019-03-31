@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct MDConvertor {
+    
+    func convertMDToHTML(_ mdToConvert:String) {
+        
+        
+        
+    }
+}

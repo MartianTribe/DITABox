@@ -13,6 +13,7 @@ typealias fileContentClosure = (Bool, Dictionary<String,Any>, String) -> Void
 struct rootViewModel {
     
     let fileManager = FileManager.default
+    let myScriptManager = scriptManager()
     
     func getFileContents(_ fileURL:URL, completion:fileContentClosure) {
         
@@ -54,5 +55,14 @@ struct rootViewModel {
         } catch {
             return []
         }
+    }
+    
+    func convertMDToHTML(_ fileURL:URL) {
+        myScriptManager.convertMDToHTML(fileURL, completion: { (_ bSuccess, strFilePath, strMsg) in
+            
+            if bSuccess {
+                print(strFilePath)
+            }
+        })
     }
 }

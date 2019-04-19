@@ -14,6 +14,9 @@
 		F586F315224D090000337297 /* DITABoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F314224D090000337297 /* DITABoxTests.swift */; };
 		F586F320224D090000337297 /* DITABoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F31F224D090000337297 /* DITABoxUITests.swift */; };
 		F586F32E224D17DF00337297 /* rootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F32D224D17DF00337297 /* rootViewModel.swift */; };
+		F586F33A224E491700337297 /* MD2HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F339224E491700337297 /* MD2HTML.swift */; };
+		F586F33C224E492C00337297 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F33B224E492C00337297 /* String+Extensions.swift */; };
+		F586F33E224E500800337297 /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F586F33D224E500800337297 /* ScriptManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		F586F31F224D090000337297 /* DITABoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DITABoxUITests.swift; sourceTree = "<group>"; };
 		F586F321224D090000337297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F586F32D224D17DF00337297 /* rootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rootViewModel.swift; sourceTree = "<group>"; };
+		F586F339224E491700337297 /* MD2HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD2HTML.swift; sourceTree = "<group>"; };
+		F586F33B224E492C00337297 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F586F33D224E500800337297 /* ScriptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,8 @@
 		F586F300224D08FF00337297 /* DITABox */ = {
 			isa = PBXGroup;
 			children = (
+				F586F338224E490000337297 /* Extensions */,
+				F586F337224E48F700337297 /* Objects */,
 				F586F32D224D17DF00337297 /* rootViewModel.swift */,
 				F586F301224D08FF00337297 /* AppDelegate.swift */,
 				F586F303224D08FF00337297 /* ViewController.swift */,
@@ -125,6 +133,23 @@
 				F586F321224D090000337297 /* Info.plist */,
 			);
 			path = DITABoxUITests;
+			sourceTree = "<group>";
+		};
+		F586F337224E48F700337297 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F586F339224E491700337297 /* MD2HTML.swift */,
+				F586F33D224E500800337297 /* ScriptManager.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		F586F338224E490000337297 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F586F33B224E492C00337297 /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +220,11 @@
 				TargetAttributes = {
 					F586F2FD224D08FF00337297 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					F586F30F224D090000337297 = {
 						CreatedOnToolsVersion = 10.1;
@@ -257,6 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F586F33C224E492C00337297 /* String+Extensions.swift in Sources */,
+				F586F33A224E491700337297 /* MD2HTML.swift in Sources */,
+				F586F33E224E500800337297 /* ScriptManager.swift in Sources */,
 				F586F304224D08FF00337297 /* ViewController.swift in Sources */,
 				F586F302224D08FF00337297 /* AppDelegate.swift in Sources */,
 				F586F32E224D17DF00337297 /* rootViewModel.swift in Sources */,
@@ -425,7 +458,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DITABox/DITABox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KHBJ3696UH;
@@ -444,7 +476,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DITABox/DITABox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KHBJ3696UH;
